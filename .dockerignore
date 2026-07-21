@@ -1,0 +1,16 @@
+.git
+.github
+.idea
+.vscode
+node_modules
+vendor
+public/build
+storage/logs
+storage/framework/cache
+storage/framework/sessions
+storage/framework/views
+whatsapp-service/node_modules
+npm-debug.log
+yarn-error.log
+.env
+.env.*
