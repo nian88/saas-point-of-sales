@@ -144,14 +144,6 @@ export default function Welcome() {
                                     Mulai Sekarang
                                     <IconArrowRight size={20} />
                                 </Link>
-                                <a
-                                    href="https://github.com/aryadwiputra/point-of-sales"
-                                    target="_blank"
-                                    className="w-full sm:w-auto px-8 py-4 text-base font-semibold text-slate-700 dark:text-slate-300 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl hover:border-primary-300 dark:hover:border-primary-700 transition-all flex items-center justify-center gap-2"
-                                >
-                                    <IconBrandGithub size={20} />
-                                    View Repository
-                                </a>
                             </div>
                         </div>
 
@@ -166,7 +158,7 @@ export default function Welcome() {
                                         <div className="w-3 h-3 rounded-full bg-green-400" />
                                     </div>
                                     <div className="flex-1 text-center text-xs text-slate-500">
-                                        dashboard.aplikasikasir.com
+                                        pos.niandev.com
                                     </div>
                                 </div>
                                 <img
