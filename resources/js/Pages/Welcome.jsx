@@ -317,6 +317,7 @@ export default function Welcome() {
                 </section>
 
                 {/* Installation */}
+                {/* 
                 <section
                     id="install"
                     className="py-20 px-6 bg-white dark:bg-slate-900"
@@ -350,9 +351,10 @@ php artisan serve`}
                             </pre>
                         </div>
                     </div>
-                </section>
+                </section> */}
 
                 {/* CTA */}
+                {/* 
                 <section className="py-20 px-6">
                     <div className="max-w-4xl mx-auto text-center">
                         <div className="bg-gradient-to-r from-primary-500 to-primary-600 rounded-3xl p-12 text-white">
@@ -373,6 +375,7 @@ php artisan serve`}
                         </div>
                     </div>
                 </section>
+                 */}
 
                 {/* Footer */}
                 <footer className="py-8 px-6 border-t border-slate-200 dark:border-slate-800">
@@ -389,8 +392,7 @@ php artisan serve`}
                             </span>
                         </div>
                         <p className="text-sm text-slate-500">
-                            © {new Date().getFullYear()} Dibuat oleh Arya Dwi
-                            Putra
+                            © {new Date().getFullYear()} Dibuat oleh Bersama
                         </p>
                     </div>
                 </footer>
