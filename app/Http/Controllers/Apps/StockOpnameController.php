@@ -8,6 +8,7 @@ use App\Http\Requests\StoreStockOpnameRequest;
 use App\Http\Requests\UpdateStockOpnameItemRequest;
 use App\Http\Requests\UpdateStockOpnameRequest;
 use App\Models\Product;
+use App\Models\ProductWarehouse;
 use App\Models\StockOpname;
 use App\Models\StockOpnameItem;
 use App\Models\Warehouse;
@@ -53,7 +54,7 @@ class StockOpnameController extends Controller
             ->when($filters['warehouse_id'], fn ($query, $warehouseId) => $query->where('warehouse_id', $warehouseId))
             ->withCount('items')
             ->latest()
-            ->paginate(10)
+            ->paginate($this->perPage())->withQueryString()
             ->withQueryString();
 
         return Inertia::render('Dashboard/StockOpnames/Index', [
@@ -119,6 +120,7 @@ class StockOpnameController extends Controller
                         $wh = $product->warehouses()->where('warehouse_id', $stockOpname->warehouse_id)->first();
                         $pivotStock = $wh?->pivot->stock ?? 0;
                     }
+
                     return [
                         ...$product->toArray(),
                         'warehouse_stock' => $pivotStock,
@@ -238,7 +240,7 @@ class StockOpnameController extends Controller
 
                 // Update pivot stock for warehouse
                 if ($stockOpname->warehouse_id) {
-                    \App\Models\ProductWarehouse::where([
+                    ProductWarehouse::where([
                         'product_id' => $product->id,
                         'warehouse_id' => $stockOpname->warehouse_id,
                     ])->update(['stock' => $stockAfter]);

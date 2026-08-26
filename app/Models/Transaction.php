@@ -2,8 +2,6 @@
 
 namespace App\Models;
 
-use Carbon\Carbon;
-use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
@@ -54,6 +52,8 @@ class Transaction extends Model
         'cashier_id' => 'integer',
         'cashier_shift_id' => 'integer',
         'customer_id' => 'integer',
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
         'cash' => 'integer',
         'change' => 'integer',
         'discount' => 'integer',
@@ -156,24 +156,19 @@ class Transaction extends Model
 
     public function needsDiscountApproval(): bool
     {
-        $threshold = (int) \App\Models\Setting::get('discount_approval_threshold', 0);
-        $percentThreshold = (int) \App\Models\Setting::get('discount_approval_percent_threshold', 0);
+        $threshold = (int) Setting::get('discount_approval_threshold', 0);
+        $percentThreshold = (int) Setting::get('discount_approval_percent_threshold', 0);
 
-        if ($threshold > 0 && $this->discount >= $threshold) return true;
+        if ($threshold > 0 && $this->discount >= $threshold) {
+            return true;
+        }
         if ($percentThreshold > 0 && $this->grand_total > 0) {
             $percent = ($this->discount / $this->grand_total) * 100;
-            if ($percent >= $percentThreshold) return true;
+            if ($percent >= $percentThreshold) {
+                return true;
+            }
         }
-        return false;
-    }
 
-    /**
-     * createdAt
-     */
-    protected function createdAt(): Attribute
-    {
-        return Attribute::make(
-            get: fn ($value) => Carbon::parse($value)->format('d-M-Y H:i:s'),
-        );
+        return false;
     }
 }
