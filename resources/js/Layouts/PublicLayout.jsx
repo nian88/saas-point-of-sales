@@ -31,21 +31,7 @@ export default function PublicLayout({ children, active = "" }) {
                         </span>
                     </Link>
 
-                    <div className="hidden md:flex items-center gap-7">
-                        {NAV_LINKS.map((link) => (
-                            <Link
-                                key={link.href}
-                                href={link.href}
-                                className={`text-sm transition-colors ${
-                                    active === link.href
-                                        ? "text-primary-600 dark:text-primary-400 font-semibold"
-                                        : "text-slate-600 dark:text-slate-400 hover:text-primary-500"
-                                }`}
-                            >
-                                {link.label}
-                            </Link>
-                        ))}
-                    </div>
+    
 
                 </div>
             </nav>
