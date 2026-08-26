@@ -47,31 +47,6 @@ export default function PublicLayout({ children, active = "" }) {
                         ))}
                     </div>
 
-                    <div className="flex items-center gap-3">
-                        <a
-                            href={GITHUB_URL}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="hidden sm:flex items-center gap-1.5 px-4 py-2 text-sm font-medium text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 rounded-xl hover:border-primary-300 dark:hover:border-primary-700 transition-colors"
-                        >
-                            <IconStar size={15} className="text-amber-400" />
-                            Star
-                        </a>
-                        <Link
-                            href="/login"
-                            className="px-5 py-2 text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-primary-500 transition-colors"
-                        >
-                            Masuk
-                        </Link>
-                        <a
-                            href={GITHUB_URL}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="px-4 py-2 text-sm font-semibold text-white bg-gradient-to-r from-primary-500 to-primary-600 rounded-xl hover:from-primary-600 hover:to-primary-700 shadow-lg shadow-primary-500/25 transition-all"
-                        >
-                            Get Source
-                        </a>
-                    </div>
                 </div>
             </nav>
 
@@ -95,29 +70,10 @@ export default function PublicLayout({ children, active = "" }) {
                         </div>
                     </div>
 
-                    <div className="flex flex-wrap items-center gap-6 text-sm text-slate-500 dark:text-slate-400">
-                        <Link href="/fitur" className="hover:text-primary-500 transition-colors">
-                            Fitur
-                        </Link>
-                        <Link href="/dokumentasi" className="hover:text-primary-500 transition-colors">
-                            Dokumentasi
-                        </Link>
-                        <Link href="/roadmap" className="hover:text-primary-500 transition-colors">
-                            Roadmap
-                        </Link>
-                        <Link href="/kontribusi" className="hover:text-primary-500 transition-colors">
-                            Kontribusi
-                        </Link>
-                        <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer" className="hover:text-primary-500 transition-colors">
-                            GitHub
-                        </a>
-                        <a href={`${GITHUB_URL}/blob/main/LICENSE`} target="_blank" rel="noopener noreferrer" className="hover:text-primary-500 transition-colors">
-                            Lisensi MIT
-                        </a>
-                    </div>
+                    
 
                     <p className="text-sm text-slate-500">
-                        © {new Date().getFullYear()} Dibuat oleh Arya Dwi Putra
+                        © {new Date().getFullYear()}
                     </p>
                 </div>
             </footer>
