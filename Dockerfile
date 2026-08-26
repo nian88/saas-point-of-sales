@@ -57,8 +57,10 @@ FROM node:22-bookworm-slim AS frontend
 
 WORKDIR /app
 
+ENV PUPPETEER_SKIP_DOWNLOAD=true
+
 COPY package.json package-lock.json ./
-RUN npm ci
+RUN npm ci --legacy-peer-deps
 
 COPY . .
 RUN npm run build
@@ -71,7 +73,14 @@ COPY . .
 COPY --from=vendor /app/vendor ./vendor
 COPY --from=frontend /app/public/build ./public/build
 
-RUN mkdir -p storage bootstrap/cache \
+RUN mkdir -p \
+        storage/app/private \
+        storage/framework/cache \
+        storage/framework/sessions \
+        storage/framework/testing \
+        storage/framework/views \
+        storage/logs \
+        bootstrap/cache \
     && php artisan storage:link --no-interaction || true \
     && chown -R www-data:www-data storage bootstrap/cache public/build
 

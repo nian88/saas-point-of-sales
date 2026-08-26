@@ -182,18 +182,44 @@ export default function Welcome() {
                         </div>
                     </div>
 
-                    {/* App preview */}
-                    <div className="mt-16 relative">
-                        <div className="absolute inset-0 bg-gradient-to-t from-slate-50 dark:from-slate-950 to-transparent z-10 pointer-events-none h-32 bottom-0 top-auto" />
-                        <div className="rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-2xl bg-white dark:bg-slate-900">
-                            <div className="bg-slate-100 dark:bg-slate-800 px-4 py-3 flex items-center gap-2">
-                                <div className="flex gap-2">
-                                    <div className="w-3 h-3 rounded-full bg-red-400" />
-                                    <div className="w-3 h-3 rounded-full bg-yellow-400" />
-                                    <div className="w-3 h-3 rounded-full bg-green-400" />
-                                </div>
-                                <div className="flex-1 text-center text-xs text-slate-500">
-                                    dikasir.web.id
+                            <h1 className="text-5xl md:text-6xl font-extrabold text-slate-900 dark:text-white leading-tight">
+                                Sistem Point of Sale
+                                <span className="block mt-2 bg-gradient-to-r from-primary-500 to-primary-600 bg-clip-text text-transparent">
+                                    Modern & Mudah Digunakan
+                                </span>
+                            </h1>
+
+                            <p className="mt-6 text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+                                Aplikasi kasir berbasis web untuk warung & toko
+                                kecil–menengah. Mendukung pencatatan transaksi,
+                                laporan, manajemen produk, pelanggan, dan banyak
+                                lagi.
+                            </p>
+
+                            <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+                                <Link
+                                    href="/register"
+                                    className="w-full sm:w-auto px-8 py-4 text-base font-semibold text-white bg-gradient-to-r from-primary-500 to-primary-600 rounded-2xl hover:from-primary-600 hover:to-primary-700 shadow-xl shadow-primary-500/30 transition-all flex items-center justify-center gap-2"
+                                >
+                                    Mulai Sekarang
+                                    <IconArrowRight size={20} />
+                                </Link>
+                            </div>
+                        </div>
+
+                        {/* Dashboard Preview */}
+                        <div className="mt-16 relative">
+                            <div className="absolute inset-0 bg-gradient-to-t from-slate-50 dark:from-slate-950 to-transparent z-10 pointer-events-none h-32 bottom-0 top-auto" />
+                            <div className="rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-2xl bg-white dark:bg-slate-900">
+                                <div className="bg-slate-100 dark:bg-slate-800 px-4 py-3 flex items-center gap-2">
+                                    <div className="flex gap-2">
+                                        <div className="w-3 h-3 rounded-full bg-red-400" />
+                                        <div className="w-3 h-3 rounded-full bg-yellow-400" />
+                                        <div className="w-3 h-3 rounded-full bg-green-400" />
+                                    </div>
+                                    <div className="flex-1 text-center text-xs text-slate-500">
+                                        pos.niandev.com
+                                    </div>
                                 </div>
                             </div>
                             <img
@@ -303,17 +329,22 @@ export default function Welcome() {
                         ))}
                     </div>
 
-                    <div className="text-center mt-10">
-                        <Link
-                            href="/fitur"
-                            className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-primary-600 dark:text-primary-400 border border-primary-200 dark:border-primary-800 rounded-xl hover:bg-primary-50 dark:hover:bg-primary-950/40 transition-colors"
-                        >
-                            Jelajahi semua fitur
-                            <IconArrowRight size={16} />
-                        </Link>
-                    </div>
-                </div>
-            </section>
+                {/* Installation */}
+                {/* 
+                <section
+                    id="install"
+                    className="py-20 px-6 bg-white dark:bg-slate-900"
+                >
+                    <div className="max-w-4xl mx-auto">
+                        <div className="text-center mb-12">
+                            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">
+                                Panduan Instalasi
+                            </h2>
+                            <p className="mt-4 text-slate-600 dark:text-slate-400">
+                                Clone repository dan jalankan dalam hitungan
+                                menit
+                            </p>
+                        </div>
 
             {/* ============ TECH STACK ============ */}
             <section className="py-16 px-6">
@@ -362,20 +393,31 @@ export default function Welcome() {
                             {quickStart}
                         </pre>
                     </div>
+                </section> */}
 
-                    <div className="mt-6 text-center">
-                        <a
-                            href={DOCS_URL}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 text-sm font-medium text-primary-600 dark:text-primary-400 hover:text-primary-700 transition-colors"
-                        >
-                            Baca dokumentasi lengkap
-                            <IconArrowRight size={16} />
-                        </a>
+                {/* CTA */}
+                {/* 
+                <section className="py-20 px-6">
+                    <div className="max-w-4xl mx-auto text-center">
+                        <div className="bg-gradient-to-r from-primary-500 to-primary-600 rounded-3xl p-12 text-white">
+                            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                                Siap Memulai?
+                            </h2>
+                            <p className="text-lg opacity-90 mb-8">
+                                Daftarkan bisnis Anda sekarang dan rasakan
+                                kemudahannya
+                            </p>
+                            <Link
+                                href="/register"
+                                className="inline-flex items-center gap-2 px-8 py-4 bg-white text-primary-600 font-semibold rounded-2xl hover:bg-slate-50 transition-colors"
+                            >
+                                Daftar Gratis Sekarang
+                                <IconArrowRight size={20} />
+                            </Link>
+                        </div>
                     </div>
-                </div>
-            </section>
+                </section>
+                 */}
 
             {/* ============ DEMO ============ */}
             <section className="py-16 px-6">
@@ -412,58 +454,8 @@ export default function Welcome() {
                                 </div>
                             </div>
                         </div>
-                        <Link
-                            href="/login"
-                            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-primary-500 to-primary-600 text-white font-semibold rounded-2xl hover:from-primary-600 hover:to-primary-700 shadow-lg shadow-primary-500/25 transition-all"
-                        >
-                            Buka Demo
-                            <IconArrowRight size={18} />
-                        </Link>
-                    </div>
-                </div>
-            </section>
-
-            {/* ============ FAQ ============ */}
-            <section id="faq" className="py-20 px-6 bg-white dark:bg-slate-900/50 border-y border-slate-200 dark:border-slate-800">
-                <div className="max-w-3xl mx-auto">
-                    <div className="text-center mb-12">
-                        <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">
-                            Pertanyaan Umum
-                        </h2>
-                    </div>
-                    <div className="space-y-4">
-                        {faqs.map((faq) => (
-                            <details
-                                key={faq.q}
-                                className="group rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 open:shadow-md transition-all"
-                            >
-                                <summary className="flex items-center justify-between gap-4 px-5 py-4 cursor-pointer list-none">
-                                    <span className="font-medium text-slate-900 dark:text-white">
-                                        {faq.q}
-                                    </span>
-                                    <span className="text-primary-500 group-open:rotate-45 transition-transform text-lg">
-                                        +
-                                    </span>
-                                </summary>
-                                <p className="px-5 pb-5 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-                                    {faq.a}
-                                </p>
-                            </details>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* ============ CTA ============ */}
-            <section className="py-20 px-6">
-                <div className="max-w-4xl mx-auto">
-                    <div className="bg-gradient-to-r from-primary-500 to-primary-600 rounded-3xl p-12 text-center text-white">
-                        <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                            Siap Kelola Bisnis dengan Dikasir?
-                        </h2>
-                        <p className="text-lg opacity-90 mb-8 max-w-xl mx-auto">
-                            Gratis selamanya, open source, dan data sepenuhnya milik Anda.
-                            Mulai dengan satu klik di GitHub.
+                        <p className="text-sm text-slate-500">
+                            © {new Date().getFullYear()} Dibuat oleh Bersama
                         </p>
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                             <a

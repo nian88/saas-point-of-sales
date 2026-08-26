@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\URL;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -34,6 +35,10 @@ class AppServiceProvider extends ServiceProvider
         \Illuminate\Support\Facades\Gate::define('viewApiDocs', fn () => true);
 
         $issues = ProductionSecurityBaseline::issues();
+        if ($this->app->environment('production')) {
+            URL::forceScheme('https');
+            // Alternatively, in newer versions: URL::forceHttps();
+        }
 
         if ($issues !== []) {
             Log::warning('Production security baseline check failed.', [

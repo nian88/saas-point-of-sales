@@ -49,6 +49,9 @@ return Application::configure(basePath: dirname(__DIR__))
             'step_up' => EnsureRecentPasswordConfirmation::class,
         ]);
     })
+    // ->withMiddleware(function (Middleware $middleware) {
+    //     $middleware->trustProxies(at: '*');
+    // })
     ->withExceptions(function (Exceptions $exceptions) {
         $exceptions->render(function (Throwable $exception, Request $request) {
             if ($exception instanceof ValidationException) {
